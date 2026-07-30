@@ -1,11 +1,63 @@
-import { useState } from "react";
-import FormInput from "./input/FormInput";
-import Form from "./input/Form";
-import Button from "./button/button";
-import Dropdown, { DropdownItem } from "./dropdown/Dropdown";
-
+import React, { useState } from "react";
+// import FormInput from "./input/FormInput";
+// import Form from "./input/Form";
+// import Button from "./button/button";
+// import Dropdown, { DropdownItem } from "./dropdown/Dropdown";
+//import Modal from "./portal/Modal";
+import Table from "./table/Table";
 function App() {
-  const [email, setEmail] = useState("");
+  //const [email, setEmail] = useState("");
+
+  //const [isOpen, setIsOpen] = useState(false);
+
+  // Định nghĩa cột
+  const columns = [
+    { key: "id", header: "ID" },
+    { key: "name", header: "Họ và tên" },
+    { key: "email", header: "Email" },
+    { key: "role", header: "Vai trò" },
+    {
+      key: "status",
+      header: "Trạng thái",
+      // Ví dụ render tùy chỉnh
+      render: (value) => (
+        <span
+          className={`px-2 py-1 rounded-full text-xs font-medium ${
+            value === "Active"
+              ? "bg-green-100 text-green-700"
+              : "bg-red-100 text-red-700"
+          }`}
+        >
+          {value}
+        </span>
+      ),
+    },
+  ];
+
+  // Dữ liệu mẫu table
+  const data = [
+    {
+      id: 1,
+      name: "Nguyễn Văn A",
+      email: "nguyenvana@example.com",
+      role: "Admin",
+      status: "Active",
+    },
+    {
+      id: 2,
+      name: "Trần Thị B",
+      email: "tranthib@example.com",
+      role: "User",
+      status: "Inactive",
+    },
+    {
+      id: 3,
+      name: "Lê Văn C",
+      email: "levanc@example.com",
+      role: "Editor",
+      status: "Active",
+    },
+  ];
 
   return (
     <>
@@ -17,6 +69,9 @@ function App() {
       </div>
       */}
 
+      {/*
+          ô dropdown
+              ↓↓↓
       <div className="h-screen bg-gray-50">
         <nav className="flex items-start justify-end px-4 py-2 border-b ">
           <Dropdown
@@ -110,6 +165,31 @@ function App() {
             </DropdownItem>
           </Dropdown>
         </nav>
+      </div> */}
+
+      {/* 
+             ô Modal
+              ↓↓↓
+      <div className="relative z-10 p-4" onClick={() => console.log("clicked")}>
+        <button 
+          onClick={() => setIsOpen(true)}
+          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md transition-all cursor-pointer"
+        >
+          Open Modal
+        </button>
+
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          Fancy Modal
+        </Modal>
+      </div>
+      <div className="relative z-20 bg-red-500 text-white p-2.5 font-semibold">Other Content</div> */}
+
+      <div className="p-6 bg-gray-100 min-h-screen">
+        <h1 className="text-2xl font-bold mb-6 text-gray-800">
+          Danh sách người dùng
+        </h1>
+
+        <Table columns={columns} data={data} />
       </div>
     </>
   );
