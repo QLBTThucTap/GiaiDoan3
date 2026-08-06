@@ -1,75 +1,36 @@
-# React + TypeScript + Vite
+📋 Ứng dụng Quản lý Giao dịch & Báo cáo Thống kê
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Demo Website
+👉 Truy cập ứng dụng tại:
 
-Currently, two official plugins are available:
+📌 Giới thiệu
+Ứng dụng Dashboard Quản lý Giao dịch & Báo cáo Thống kê được xây dựng bằng ReactJS, TypeScript và Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Người dùng có thể:
 
-## React Compiler
+- Xem các thẻ thống kê chỉ số KPI tổng quan (Tổng doanh thu, Đơn hàng mới, Khách hàng mới, Tỷ lệ chuyển đổi)
+- Tìm kiếm giao dịch nhanh chóng theo tên khách hàng, email hoặc mã giao dịch
+- Lọc danh sách giao dịch theo trạng thái (Tất cả, Completed, Pending, Cancelled, Processing)
+- Thêm mới giao dịch vào hệ thống với Modal form trực quan
+- Chỉnh sửa thông tin khách hàng, số tiền và trạng thái giao dịch
+- Xóa giao dịch khỏi danh sách với Modal xác nhận an toàn
+- Tính toán và hiển thị tổng tiền các giao dịch được lọc theo thời gian thực
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🛠 Công nghệ sử dụng
 
-## Expanding the ESLint configuration
+- ReactJS
+- TypeScript
+- Vite
+- Tailwind CSS
+- Heroicons
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📚 Kiến thức áp dụng
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+- Functional Component
+- Props
+- State
+- useState Hook
+- Hooks nâng cao: useMemo, useCallback, useEffect
+- Interface & Type Aliases (`Transaction`, `StatCardData`, `FilterOptions`, `TransactionStatus`)
+- Union Types
+- Reusable UI Components (Button, Modal, Badge, Input, Select, Table, Card)
