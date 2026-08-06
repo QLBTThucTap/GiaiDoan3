@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/GiaiDoan3/",
+  base: "QLBTThucTap/GiaiDoan3/",
   plugins: [react(), tailwindcss()],
 });
